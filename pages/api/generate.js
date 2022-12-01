@@ -13,7 +13,6 @@ Write me a twitter thread in the style of Donald Trump with the title below. Mak
 Title:
 `
 const generateAction = async (req, res) => {
-    console.log(apiKey);
     // Run first prompt
     console.log(`API: ${basePromptPrefix}${req.body.userInput}`);
 

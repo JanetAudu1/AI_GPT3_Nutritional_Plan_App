@@ -8,19 +8,27 @@ const openai = new OpenAIApi(configuration);
 
 const basePromptPrefix = 
 `
-Write me a twitter thread in the style of Donald Trump with the title below. Make it sound somewhat obnoxious like he does. Use hashtags. Make it sound like he's tweeting from his phone.
+Create a weekly nutritional plan for the given medical conditions for a special cuisine, along with the nutritional benefits of each food.
+\n`
+const userInput1 = "Condition: "
+const userInput2 = "Cuisine: "
 
-Title:
-`
 const generateAction = async (req, res) => {
+    const userInput3 = `${userInput1}${req.body.userInputCondition}\n`;
+    console.log(`user Input: ${userInput3}`);
+
+    const userInput4 = `${userInput2}${req.body.userInputCuisine}\n`;
+    console.log(`user Input: ${userInput4}`);
+
+
     // Run first prompt
-    console.log(`API: ${basePromptPrefix}${req.body.userInput}`);
+    console.log(`API: ${basePromptPrefix}${userInput3}${userInput4}`);
 
     const baseCompletion = await openai.createCompletion({
-        model: 'text-davinci-003',
-        prompt: `${basePromptPrefix}${req.body.userInput}\n`,
+	model: 'text-davinci-003',
+        prompt: `${basePromptPrefix}${userInput3}${userInput4}\n`,
         temperature: 0.8,
-        max_tokens: 250,
+        max_tokens: 1000,
     });
 
     const basePromptOutput = baseCompletion.data.choices.pop();

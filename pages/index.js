@@ -3,7 +3,8 @@ import Image from 'next/image';
 import { useState } from 'react';
 
 const Home = () => {
-  const [userInput, setUserInput] = useState('');
+  const [userInputCondition, setUserInputCondition] = useState('');
+  const [userInputCuisine, setUserInputCuisine] = useState('');
   const [apiOutput, setApiOutput] = useState('');
   const [isGenerating, setIsGenerating] = useState(false);
 
@@ -16,7 +17,8 @@ const Home = () => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ userInput }),
+
+      body: JSON.stringify({ userInputCondition, userInputCuisine }),
     });
 
     const data = await response.json();
@@ -27,38 +29,51 @@ const Home = () => {
     setIsGenerating(false);
   }
 
-  const onUserChangedText = (event) => {
+  const onUserConditionChanged = (event) => {
     console.log(event.target.value);
-    setUserInput(event.target.value);
+    setUserInputCondition(event.target.value);
+  };
+  const onUserCuisineChanged = (event) => {
+      console.log(event.target.value);
+      setUserInputCuisine(event.target.value);
   };
 
   return (
     <div className="root">
       <Head>
-        <title>GPT-3 Writer | buildspace</title>
+        <title>AI Nutritional Plan App</title>
       </Head>
       <div className="container">
         <div className="header">
           <div className="header-title">
-            <h1>Trump Twitter Fingers</h1>
+            <h1>World's Best Nutritional Plan</h1>
           </div>
           <div className="header-subtitle">
-            <h2>Insert a word or topic here and have Donald Trump tweet about it for you lol.</h2>
+            <h2>Powered by GPT3</h2>
           </div>
         </div>
         <div className="prompt-container">
           <textarea
             className='prompt-box'
-            placeholder='type anything...'
-            value={userInput}
-            onChange={onUserChangedText}
+            placeholder='type medical Condition...'
+            value={userInputCondition}
+            onChange={onUserConditionChanged}
           />
+ 	    <input type="text"
+
+             className='prompt-box'
+              placeholder='type Cuisine..'
+              value={userInputCuisine}
+              onChange={onUserCuisineChanged}
+            />
+
+
           <div className="prompt-buttons">
             <a 
             className={isGenerating ? 'generate-button loading' : 'generate-button'} 
             onClick={callGenerateEndpoint}>
               <div className="generate">
-                {isGenerating ? <span class="loader"></span> : <p>Generate</p>}
+                {isGenerating ? <span className="loader"></span> : <p>Generate</p>}
               </div>
             </a>
           </div>

@@ -22,11 +22,13 @@ const generateAction = async (req, res) => {
 
 
     // Run first prompt
-    console.log(`API: ${basePromptPrefix}${userInput3}${userInput4}`);
+    console.log(`API: ${basePromptPrefix}${userInput3}`);
+//    console.log(`API: ${basePromptPrefix}${userInput3}${userInput4}`);
 
     const baseCompletion = await openai.createCompletion({
 	model: 'text-davinci-003',
-        prompt: `${basePromptPrefix}${userInput3}${userInput4}\n`,
+        prompt: `${basePromptPrefix}${userInput3}\n`,
+//        prompt: `${basePromptPrefix}${userInput3}${userInput4}\n`,
         temperature: 0.8,
         max_tokens: 1000,
     });

@@ -8,9 +8,7 @@ const openai = new OpenAIApi(configuration);
 
 const basePromptPrefix =
 `
-Write me a twitter thread in the style of Donald Trump with the title below. Make it sound somewhat obnoxious like he does. Use hashtags. Make it sound like he's tweeting from his phone.
-
-Title:
+Create a weekly nutritional plan for a given  condition and a cuisine, along with the nutritional benefits of each food.
 `
 const userInput1 = "Condition: "
 //const userInput2 = "Cuisine: "

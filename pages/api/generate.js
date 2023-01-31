@@ -8,27 +8,25 @@ const openai = new OpenAIApi(configuration);
 
 const basePromptPrefix =
 `
-Create a weekly nutritional plan for a given  condition and a cuisine, along with the nutritional benefits of each food.
+Create a weekly nutritional plan for a given Condition and a Cuisine, along with the nutritional benefits of each food.
 `
 const userInput1 = "Condition: "
-//const userInput2 = "Cuisine: "
+const userInput2 = "Cuisine: "
 
 const generateAction = async (req, res) => {
     const userInput3 = `${userInput1}${req.body.userInputCondition}\n`;
     console.log(`user Input: ${userInput3}`);
 
-//    const userInput4 = `${userInput2}${req.body.userInputCuisine}\n`;
-//    console.log(`user Input: ${userInput4}`);
+    const userInput4 = `${userInput2}${req.body.userInputCuisine}\n`;
+    console.log(`user Input: ${userInput4}`);
 
 
     // Run first prompt
-    console.log(`API: ${basePromptPrefix}${userInput3}`);
-//    console.log(`API: ${basePromptPrefix}${userInput3}${userInput4}`);
+    console.log(`API: ${basePromptPrefix}${userInput3}${userInput4}`);
 
     const baseCompletion = await openai.createCompletion({
 	model: 'text-davinci-003',
-        prompt: `${basePromptPrefix}${userInput3}\n`,
-//        prompt: `${basePromptPrefix}${userInput3}${userInput4}\n`,
+        prompt: `${basePromptPrefix}${userInput3}${userInput4}\n`,
         temperature: 0.8,
         max_tokens: 250,
     });

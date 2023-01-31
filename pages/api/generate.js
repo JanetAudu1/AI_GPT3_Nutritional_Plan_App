@@ -11,14 +11,14 @@ const basePromptPrefix =
 Create a weekly nutritional plan for the given medical conditions for a special cuisine, along with the nutritional benefits of each food.
 \n`
 const userInput1 = "Condition: "
-const userInput2 = "Cuisine: "
+//const userInput2 = "Cuisine: "
 
 const generateAction = async (req, res) => {
     const userInput3 = `${userInput1}${req.body.userInputCondition}\n`;
     console.log(`user Input: ${userInput3}`);
 
-    const userInput4 = `${userInput2}${req.body.userInputCuisine}\n`;
-    console.log(`user Input: ${userInput4}`);
+//    const userInput4 = `${userInput2}${req.body.userInputCuisine}\n`;
+//    console.log(`user Input: ${userInput4}`);
 
 
     // Run first prompt

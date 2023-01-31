@@ -46,7 +46,7 @@ const Home = () => {
       <div className="container">
         <div className="header">
           <div className="header-title">
-            <h1>World's Best Nutritional Plan</h1>
+            <h1> Weekly Nutritional Planner (Monday - Wednesday)</h1>
           </div>
           <div className="header-subtitle">
             <h2>Powered by GPT3</h2>

@@ -8,9 +8,9 @@ const openai = new OpenAIApi(configuration);
 
 const basePromptPrefix =
 `
-Create a weekly nutritional plan for the given medical conditions for a special cuisine, along with the nutritional benefits of each food.
+Write me a twitter thread in the style of Donald Trump with the title below. Make it sound somewhat obnoxious like he does. Use hashtags. Make it sound like he's tweeting from his phone.
 
-Plan:
+Title:
 `
 const userInput1 = "Condition: "
 //const userInput2 = "Cuisine: "

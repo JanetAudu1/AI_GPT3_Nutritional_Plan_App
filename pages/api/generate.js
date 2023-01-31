@@ -8,7 +8,7 @@ const openai = new OpenAIApi(configuration);
 
 const basePromptPrefix =
 `
-Create a weekly nutritional plan for a given Condition and a Cuisine.
+Create a weekly nutritional plan for Monday to Wednesday for a given Condition and a Cuisine. Along with benefit explanation of each meal
 `
 const userInput1 = "Condition: "
 const userInput2 = "Cuisine: "

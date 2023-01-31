@@ -30,7 +30,7 @@ const generateAction = async (req, res) => {
         prompt: `${basePromptPrefix}${userInput3}\n`,
 //        prompt: `${basePromptPrefix}${userInput3}${userInput4}\n`,
         temperature: 0.8,
-        max_tokens: 1000,
+        max_tokens: 250,
     });
 
     const basePromptOutput = baseCompletion.data.choices.pop();

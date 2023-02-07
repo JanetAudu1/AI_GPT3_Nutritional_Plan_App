@@ -46,10 +46,10 @@ const Home = () => {
       <div className="container">
         <div className="header">
           <div className="header-title">
-            <h1> Weekly Nutritional Planner (Monday - Wednesday)</h1>
+            <h2> Weekly Nutrition Planner (Mon - Fri) </h2>
           </div>
           <div className="header-subtitle">
-            <h2>Powered by GPT3</h2>
+            <h3>Powered by GPT3</h3>
           </div>
         </div>
         <div className="prompt-container">

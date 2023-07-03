@@ -34,6 +34,7 @@ const generateAction = async (req, res) => {
     const basePromptOutput = baseCompletion.data.choices.pop();
 
     res.status(200).json({ output: basePromptOutput });
+	res.redirect(303, '/confirmOrder')
 };
 
 export default generateAction;
